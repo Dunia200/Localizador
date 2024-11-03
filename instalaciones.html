@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <title>Instalaciones - Instituto Franklin Delano Roosevelt</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Cambié la fuente a Roboto */
+            background-color: #f4f4f4; /* Color de fondo */
+        }
+        nav {
+            background-color: #808080; /* Menú gris */
+            color: white;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centrado del menú */
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px; /* Espaciado en los enlaces */
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: #666; /* Color de fondo al pasar el mouse */
+            border-radius: 5px;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .galeria {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .galeria img {
+            width: 300px;
+            height: 200px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Instituto Franklin Delano Roosevelt</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="info-general.html">Información General</a></li>
+                <li><a href="instalaciones.html">Instalaciones</a></li>
+                <li><a href="promocion2024.html">Promoción 2024</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Nuestras Instalaciones</h2>
+            <p>
+                El instituto cuenta con modernas instalaciones diseñadas para ofrecer un ambiente óptimo para el aprendizaje y el desarrollo de habilidades prácticas. Estas incluyen:
+            </p>
+            <ul>
+                <li>Laboratorios de informática con tecnología de última generación.</li>
+                <li>Aulas amplias y cómodas equipadas con recursos audiovisuales.</li>
+                <li>Biblioteca con acceso a una amplia variedad de recursos educativos.</li>
+                <li>Áreas recreativas para el esparcimiento de los estudiantes.</li>
+                <li>Gimnasio con equipos modernos para promover la actividad física.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Galería de Imágenes</h3>
+            <div class="galeria">
+                <img src="C:\Users\edwar\OneDrive\Escritorio\DuniaProyect\historiafdr\banner.tiff" alt="Instalación 1">
+                <img src="C:\Users\edwar\OneDrive\Escritorio\DuniaProyect\historiafdr\fotocolegio1.jpeg" alt="Instalación 2">
+                <img src="C:\Users\edwar\OneDrive\Escritorio\DuniaProyect\historiafdr\banerdepagina.jpg" alt="Instalación 3">
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="modal">
+        <img id="modal-img" src="" alt="">
+    </div>
+
+    <footer>
+        <p>Instituto Franklin Delano Roosevelt - Puerto Cortés, Honduras</p>
+    </footer>
+
+    <script>
+        const images = document.querySelectorAll('.galeria img');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                modalImg.src = image.src;
+                modal.style.display = 'flex';
+            });
+        });
+
+        modal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
